@@ -2,16 +2,13 @@
 window.addEventListener("load" , themes())
 
 function themes() {
-  console.log("ON");
   if (
     localStorage.getItem("theme") == "light" ||
     localStorage.getItem("theme") == null
   ) {
     document.querySelector(".parent").classList.remove("dark");
-    console.log("Light Theme Active");
   } else if (localStorage.getItem("theme") == "dark") {
     document.querySelector(".parent").classList.add("dark");
-    console.log("Dark Theme Active");
   }
 };
 

@@ -39,12 +39,12 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(/images/bg-mobile-light.jpg);
+  background-image: url(images/bg-mobile-light.jpg);
   height: 200px;
 }
 @media (min-width: 1440px) {
   .parent .background-image {
-    background-image: url(/images/bg-desktop-light.jpg);
+    background-image: url(images/bg-desktop-light.jpg);
     height: 300px;
   }
 }
@@ -98,7 +98,7 @@
   background-color: transparent;
   display: flex;
   cursor: pointer;
-  background-image: url(/images/icon-moon.svg);
+  background-image: url(images/icon-moon.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@
   background-color: transparent;
   display: flex;
   border: none;
-  background-image: url("/images/icon-cross.svg");
+  background-image: url("images/icon-cross.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -257,11 +257,11 @@
   color: hsl(220, 55%, 37%);
 }
 .parent.dark .background-image {
-  background-image: url(/images/bg-mobile-dark.jpg);
+  background-image: url(images/bg-mobile-dark.jpg);
 }
 @media (min-width: 1440px) {
   .parent.dark .background-image {
-    background-image: url(/images/bg-desktop-dark.jpg);
+    background-image: url(images/bg-desktop-dark.jpg);
   }
 }
 .parent.dark .todo-box .logo-bar button {
