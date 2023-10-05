@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.parent.dark .todo-box .todo-list .last-box button, .parent .todo-box .mobile-filter-bar button, .parent .todo-box .todo-list .last-box button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: hsl(236, 9%, 61%);
+  cursor: pointer;
+}
+
+.parent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: hsl(0, 0%, 98%);
+  /************************************************************Dark Theme************************************************************/
+}
+@media (min-width: 1440px) {
+  .parent {
+    justify-content: center;
+  }
+}
+.parent.dark {
+  background-color: hsl(235, 21%, 11%);
+}
+.parent .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/bg-mobile-light.jpg);
+  height: 200px;
+}
+@media (min-width: 1440px) {
+  .parent .background-image {
+    background-image: url(/images/bg-desktop-light.jpg);
+    height: 300px;
+  }
+}
+.parent .todo-box .mobile-filter-bar, .parent .todo-box .todo-list, .parent .todo-box .new-todo-input-bar {
+  background-color: white;
+}
+.parent.dark .todo-box .mobile-filter-bar, .parent.dark .todo-box .todo-list, .parent.dark .todo-box .new-todo-input-bar {
+  background-color: hsl(235, 24%, 19%);
+}
+.parent .todo-box {
+  margin-top: 50px;
+  width: 85%;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 25px;
+}
+@media (min-width: 1440px) {
+  .parent .todo-box {
+    width: 40%;
+    margin-top: 0;
+  }
+}
+.parent .todo-box .logo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.parent .todo-box .logo-bar h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 1.75em;
+}
+@media (min-width: 1440px) {
+  .parent .todo-box .logo-bar h1 {
+    letter-spacing: 20px;
+    font-size: 2.5em;
+  }
+}
+.parent .todo-box .logo-bar button {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  cursor: pointer;
+  background-image: url(/images/icon-moon.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.parent .todo-box .new-todo-input-bar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+}
+.parent .todo-box .new-todo-input-bar .checkbox[clicked=true] + #new-todo-input {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
+.parent .todo-box .new-todo-input-bar .checkbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid hsl(234, 11%, 52%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.parent .todo-box .new-todo-input-bar .checkbox .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: inherit;
+}
+.parent .todo-box .new-todo-input-bar .checkbox img {
+  display: none;
+}
+.parent .todo-box .new-todo-input-bar #new-todo-input {
+  flex-grow: 1;
+  padding: 0 10px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  color: hsl(235, 19%, 35%);
+  caret-color: hsl(220, 98%, 61%);
+}
+.parent .todo-box .new-todo-input-bar #new-todo-input::-moz-placeholder {
+  color: hsl(236, 9%, 61%);
+}
+.parent .todo-box .new-todo-input-bar #new-todo-input::placeholder {
+  color: hsl(236, 9%, 61%);
+}
+.parent .todo-box .new-todo-input-bar #new-todo-input:focus {
+  outline: none;
+}
+.parent .todo-box .todo-list {
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px 0px hsl(235, 32%, 92%);
+}
+.parent .todo-box .todo-list .todo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+.parent .todo-box .todo-list .todo p {
+  font-size: 18px;
+  padding: 0 10px;
+  flex-grow: 1;
+}
+.parent .todo-box .todo-list .todo button {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  display: flex;
+  border: none;
+  background-image: url("/images/icon-cross.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parent .todo-box .todo-list .todo:last-child {
+  border-bottom: none;
+}
+@media (min-width: 1440px) {
+  .parent .todo-box .todo-list .todo:last-child {
+    border-bottom: 1px solid hsl(233, 11%, 84%);
+  }
+  .parent .todo-box .todo-list .todo button {
+    display: none;
+  }
+  .parent .todo-box .todo-list .todo:hover button {
+    display: flex;
+  }
+}
+.parent .todo-box .todo-list .last-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.parent .todo-box .todo-list .last-box .items-left {
+  color: hsl(236, 9%, 61%);
+}
+.parent .todo-box .todo-list .last-box button:hover {
+  color: hsl(235, 19%, 35%);
+}
+.parent .todo-box .todo-list .last-box .filter-bar {
+  display: none;
+  gap: 20px;
+}
+.parent .todo-box .todo-list .last-box .filter-bar .active {
+  color: hsl(220, 98%, 61%);
+}
+.parent .todo-box .todo-list .last-box .filter-bar button {
+  font-weight: 700;
+}
+@media (min-width: 1440px) {
+  .parent .todo-box .todo-list .last-box .filter-bar {
+    display: flex;
+  }
+}
+.parent .todo-box .mobile-filter-bar {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: center;
+}
+.parent .todo-box .mobile-filter-bar .active {
+  color: hsl(220, 98%, 61%);
+}
+.parent .todo-box .mobile-filter-bar button {
+  font-weight: 700;
+}
+.parent .todo-box .mobile-filter-bar button:hover {
+  color: hsl(235, 19%, 35%);
+}
+@media (min-width: 1440px) {
+  .parent .todo-box .mobile-filter-bar {
+    display: none;
+  }
+}
+.parent .drag-and-drop-p {
+  color: hsl(236, 9%, 61%);
+  margin: 30px 0 15px;
+}
+.parent .attribution {
+  color: hsl(236, 9%, 61%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.parent .attribution a {
+  color: hsl(220, 98%, 61%);
+}
+.parent .attribution a:visited {
+  color: hsl(220, 55%, 37%);
+}
+.parent.dark .background-image {
+  background-image: url(/images/bg-mobile-dark.jpg);
+}
+@media (min-width: 1440px) {
+  .parent.dark .background-image {
+    background-image: url(/images/bg-desktop-dark.jpg);
+  }
+}
+.parent.dark .todo-box .logo-bar button {
+  background-image: url(images/icon-sun.svg);
+}
+.parent.dark .todo-box .new-todo-input-bar #new-todo-input {
+  color: hsl(236, 33%, 92%);
+}
+.parent.dark .todo-box .todo-list {
+  box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.parent.dark .todo-box .todo-list .todo {
+  border-color: hsl(233, 14%, 35%);
+  color: hsl(236, 33%, 92%);
+}
+.parent.dark .todo-box .todo-list .last-box button:hover {
+  color: white;
+}
+.parent.dark .todo-box .mobile-filter-bar button:hover {
+  color: white;
+}
+.parent.dark .checkbox.clicked + p {
+  text-decoration: line-through;
+  color: hsl(234, 11%, 52%);
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid hsl(234, 11%, 52%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: inherit;
+}
+.checkbox img {
+  display: none;
+}
+
+.checkbox.clicked {
+  background-image: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+.checkbox.clicked img {
+  display: initial;
+}
+
+.checkbox.clicked + p {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}/*# sourceMappingURL=style.css.map */
